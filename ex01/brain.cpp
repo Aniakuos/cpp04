@@ -16,9 +16,13 @@ brain::brain(brain const &src)
     *this = src;
 }
 
-brain & brain::operator=(brain const & )//rhs
+brain & brain::operator=(brain const & rhs)
 {
+    int i = 0;
     std::cout << "Assignation operator of brain called" << std::endl;
-    //this->type = rhs.getType();
+    for(i=0;i<100;i++)
+    {
+       this->ideas[i] = rhs.ideas[i]; 
+    }
     return (*this);
 }
