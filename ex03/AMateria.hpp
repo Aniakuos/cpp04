@@ -30,9 +30,12 @@ class Ice
 
 class Cure
 {
+    protected:
+        std::string name;
     public:
         Cure( void );
         Cure( Cure const &src);
+        std::string getname() const;
         Cure & operator=(Cure const & rhs);
         ~Cure( void );
 };

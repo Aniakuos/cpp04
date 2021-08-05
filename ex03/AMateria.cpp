@@ -33,7 +33,7 @@ AMateria::~AMateria( void )
     std::cout << "Destructor of AMateria called\n";
 }
 
-Ice::Ice( void ) : Type("ice")
+Ice::Ice( void ) //: Type("ice")
 {
     std::cout << "Default constructor of Ice called\n";
 }
@@ -56,7 +56,7 @@ Ice::~Ice( void )
     std::cout << "Desctructor of Ice Called\n";
 }
 
-Cure::Cure( void ) : Type("cure")
+Cure::Cure( void ) : name("cure")
 {
     std::cout << "Default constructor of Cure called\n";
 }
@@ -67,12 +67,17 @@ Cure::Cure( Cure const &src)
     *this = src;
 }
 
-// Cure & Cure::operator=(Cure const & rhs)
-// {
-//     std::cout << "Assignation operator of Cure called" << std::endl;
-//     this->Type = rhs.getType();
-//     return (*this);
-// }
+std::string Cure::getname() const
+{
+    return ( this->name );
+}
+
+Cure & Cure::operator=(Cure const & rhs)
+{
+    std::cout << "Assignation operator of Cure called" << std::endl;
+    this->name = rhs.getname();
+    return (*this);
+}
 
 Cure::~Cure( void )
 {
