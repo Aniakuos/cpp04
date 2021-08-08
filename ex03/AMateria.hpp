@@ -19,7 +19,7 @@ class AMateria
         //virtual void use(ICharacter& target);
 };
 
-class Ice
+class Ice : public AMateria
 {
     public:
         Ice( void );
@@ -28,14 +28,11 @@ class Ice
         ~Ice( void );
 };
 
-class Cure
+class Cure : public AMateria
 {
-    protected:
-        std::string name;
     public:
         Cure( void );
         Cure( Cure const &src);
-        std::string getname() const;
         Cure & operator=(Cure const & rhs);
         ~Cure( void );
 };

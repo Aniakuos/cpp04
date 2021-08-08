@@ -28,12 +28,17 @@ std::string const & AMateria::getType() const
     return ( this->Type );
 }
 
+AMateria* AMateria::clone() const
+{
+    return( new Type);
+}
+
 AMateria::~AMateria( void )
 {
     std::cout << "Destructor of AMateria called\n";
 }
 
-Ice::Ice( void ) //: Type("ice")
+Ice::Ice( void ) : AMateria("ice")
 {
     std::cout << "Default constructor of Ice called\n";
 }
@@ -44,19 +49,24 @@ Ice::Ice( Ice const &src)
     *this = src;
 }
 
-// Ice & Ice::operator=(Ice const & rhs)
-// {
-//     std::cout << "Assignation operator of Ice called" << std::endl;
-//     this->Type = rhs.getType();
-//     return (*this);
-// }
+Ice & Ice::operator=(Ice const & rhs)
+{
+    std::cout << "Assignation operator of Ice called" << std::endl;
+    this->Type = rhs.getType();
+    return (*this);
+}
 
 Ice::~Ice( void )
 {
     std::cout << "Desctructor of Ice Called\n";
 }
 
-Cure::Cure( void ) : name("cure")
+AMateria* Ice::clone() const
+{
+    return(new Ice(*this));
+}
+
+Cure::Cure( void ) : AMateria("cure")
 {
     std::cout << "Default constructor of Cure called\n";
 }
@@ -67,19 +77,24 @@ Cure::Cure( Cure const &src)
     *this = src;
 }
 
-std::string Cure::getname() const
-{
-    return ( this->name );
-}
-
 Cure & Cure::operator=(Cure const & rhs)
 {
     std::cout << "Assignation operator of Cure called" << std::endl;
-    this->name = rhs.getname();
+    this->Type = rhs.getType();
     return (*this);
 }
 
 Cure::~Cure( void )
 {
     std::cout << "Desctructor of Cure Called\n";
+}
+
+AMateria* Cure::clone() const
+{
+    return(new Cure(*this));
+}
+
+void AMateria::use(ICharacter& target)
+{
+    std::cout << "shoots an ice bolt at " << this->getName()
 }
