@@ -96,5 +96,5 @@ AMateria* Cure::clone() const
 
 void AMateria::use(ICharacter& target)
 {
-    std::cout << "shoots an ice bolt at " << this->getName()
+    std::cout << "* shoots an ice bolt at " << this->getType() << "*\n";
 }

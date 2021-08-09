@@ -7,6 +7,7 @@ all : $(NAME)
 $(NAME):
 		@clang++ $(CFLAGS) main.cpp \
 		AMateria.cpp \
+		ICharacter.cpp \
 		-o $(NAME)
 
 clean:
