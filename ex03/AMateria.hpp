@@ -26,7 +26,8 @@ class Ice : public AMateria
         Ice( Ice const &src);
         Ice & operator=(Ice const & rhs);
         ~Ice( void );
-        AMateria* Ice::clone() const;
+        AMateria* clone() const;
+        void use(ICharacter& target);
 };
 
 class Cure : public AMateria
@@ -36,7 +37,8 @@ class Cure : public AMateria
         Cure( Cure const &src);
         Cure & operator=(Cure const & rhs);
         ~Cure( void );
-        AMateria* Cure::clone() const;
+        AMateria* clone() const;
+        void use(ICharacter& target);
 };
 
 #endif

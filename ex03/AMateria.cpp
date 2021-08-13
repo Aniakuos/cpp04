@@ -66,6 +66,11 @@ AMateria* Ice::clone() const
     return(new Ice(*this));
 }
 
+void Ice::use(ICharacter& target)
+{
+    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}
+
 Cure::Cure( void ) : AMateria("cure")
 {
     std::cout << "Default constructor of Cure called\n";
@@ -94,7 +99,7 @@ AMateria* Cure::clone() const
     return(new Cure(*this));
 }
 
-void AMateria::use(ICharacter& target)
+void Ice::use(ICharacter& target)
 {
-    std::cout << "* shoots an ice bolt at " << this->getType() << "*\n";
+    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
