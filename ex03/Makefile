@@ -8,6 +8,7 @@ $(NAME):
 		@clang++ $(CFLAGS) main.cpp \
 		AMateria.cpp \
 		Character.cpp \
+		MateriaSource.cpp \
 		-o $(NAME)
 
 clean:

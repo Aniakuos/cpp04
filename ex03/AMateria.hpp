@@ -1,8 +1,12 @@
 #ifndef AMATERIA_H
 # define AMATERIA_H
 
+
 #include <iostream>
 #include <string>
+#include "Character.hpp"
+
+class ICharacter;
 
 class AMateria
 {
@@ -16,7 +20,7 @@ class AMateria
         virtual ~AMateria( void);
         std::string const & getType() const; //Returns the materia type
         virtual AMateria* clone() const = 0;
-        //virtual void use(ICharacter& target);
+        virtual void use(ICharacter& target);
 };
 
 class Ice : public AMateria

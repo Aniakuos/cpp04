@@ -2,7 +2,7 @@
 
 AMateria::AMateria( void )
 {
-    std::cout << "Defaulr constructor of AMateria called \n";
+    std::cout << "Default constructor of AMateria called \n";
 }
 
 AMateria::AMateria( AMateria const &src)
@@ -19,7 +19,8 @@ AMateria::AMateria(std::string const & type) : Type(type)
 AMateria & AMateria::operator=(AMateria const & rhs)
 {
     std::cout << "Assignation operator of AMateria called" << std::endl;
-    this->Type = rhs.getType();
+    //this->Type = rhs.getType();
+    (void) rhs;
     return (*this);
 }
 
@@ -28,9 +29,9 @@ std::string const & AMateria::getType() const
     return ( this->Type );
 }
 
-AMateria* AMateria::clone() const
+void AMateria::use(ICharacter& target)
 {
-    return( new Type);
+    std::cout << "use  " << target.getName() << " for AMateria" << std::endl;
 }
 
 AMateria::~AMateria( void )
@@ -99,7 +100,7 @@ AMateria* Cure::clone() const
     return(new Cure(*this));
 }
 
-void Ice::use(ICharacter& target)
+void Cure::use(ICharacter& target)
 {
     std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

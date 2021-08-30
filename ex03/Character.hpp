@@ -1,25 +1,27 @@
 #ifndef CHARACTER_H
 # define CHARACTER_H
 
-#include <iostrem>
+#include <iostream>
 #include <string>
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
 
-class Character
+class Character : public ICharacter
 {
     protected:
-        std::string Name;
+        std::string name;
+        AMateria* inv[4];
         
     public:
         Character( void );
+        Character( std::string const & name );
         Character( Character const &src);
         Character & operator=(Character const & rhs);
-        virtual ~Character() {}
-        std::string const & getName() const = 0;
-        void equip(AMateria* m) = 0;
-        void unequip(int idx) = 0;
-        void use(int idx, Character& target) = 0;
+        ~Character();// {}
+        std::string const & getName() const;
+        void equip(AMateria* m);
+        void unequip(int idx);
+        void use(int idx, ICharacter& target);
 };
 
 #endif
