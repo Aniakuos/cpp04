@@ -30,6 +30,9 @@ class Cat : public Animal
         Cat& operator=(Cat const &);
         virtual void makeSound() const;
         virtual ~Cat();
+        std::string getIdea( int i ) const;
+        void setIdea( int i, std::string idea );
+
     private:
         brain *obj;
 };
@@ -42,6 +45,9 @@ class Dog : public Animal
         Dog& operator=(Dog const &);
         virtual void makeSound() const;
         virtual ~Dog();
+        std::string getIdea( int i ) const;
+        void setIdea( int i, std::string idea );
+        
     private:
         brain *obj;
 };

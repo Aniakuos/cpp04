@@ -3,8 +3,6 @@
 
 #include "IMateriaSource.hpp"
 #include "AMateria.hpp"
-#include <iostream>
-#include <string>
 
 class MateriaSource : public IMateriaSource
 {

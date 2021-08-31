@@ -20,9 +20,19 @@ brain & brain::operator=(brain const & rhs)
 {
     int i = 0;
     std::cout << "Assignation operator of brain called" << std::endl;
-    for(i=0;i<100;i++)
+    for( i = 0; i < 100; i++ )
     {
        this->ideas[i] = rhs.ideas[i]; 
     }
     return (*this);
+}
+
+std::string brain::getIdea( int i ) const
+{
+    return (this->ideas[i]);
+}
+
+void brain::setIdea( int i, std::string idea)
+{
+    this->ideas[i] = idea;
 }

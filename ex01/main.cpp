@@ -21,6 +21,12 @@ int main()
         delete ani[i];
     }
     
+    Cat cat;
+    cat.setIdea(0, "test idea");
+    std::cout << cat.getIdea(0) << "\n";
+    Cat cat2(cat);
+    std::cout << cat2.getIdea(0) << "\n";
+
     //delete j;//should not create a leak
     //delete i;
 }

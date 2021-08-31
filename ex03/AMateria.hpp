@@ -23,26 +23,4 @@ class AMateria
         virtual void use(ICharacter& target);
 };
 
-class Ice : public AMateria
-{
-    public:
-        Ice( void );
-        Ice( Ice const &src);
-        Ice & operator=(Ice const & rhs);
-        ~Ice( void );
-        AMateria* clone() const;
-        void use(ICharacter& target);
-};
-
-class Cure : public AMateria
-{
-    public:
-        Cure( void );
-        Cure( Cure const &src);
-        Cure & operator=(Cure const & rhs);
-        ~Cure( void );
-        AMateria* clone() const;
-        void use(ICharacter& target);
-};
-
 #endif

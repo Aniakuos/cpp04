@@ -6,25 +6,25 @@
 
 class Animal
 {
-private:
-    /* data */
-public:
-    Animal();
-    Animal(Animal const &);
-    Animal& operator=(Animal const &);
-    virtual void makeSound() const;
-    std::string getType( void ) const;
-    void set_Type( std::string const t);
-    virtual ~Animal();
-protected:
-    std::string type;
+    private:
+        /* data */
+    public:
+        Animal( void );
+        Animal(Animal const &);
+        Animal& operator=(Animal const &);
+        virtual void makeSound() const;
+        std::string getType( void ) const;
+        void set_Type( std::string const t);
+        virtual ~Animal();
+    protected:
+        std::string type;
 
 };
 
 class Cat : public Animal
 {
     public:
-        Cat();
+        Cat( void );
         Cat(Cat const &);
         Cat& operator=(Cat const &);
         virtual void makeSound() const;
@@ -35,7 +35,7 @@ class Cat : public Animal
 class Dog : public Animal
 {
     public:
-        Dog();
+        Dog( void );
         Dog(Dog const &);
         Dog& operator=(Dog const &);
         virtual void makeSound() const;
