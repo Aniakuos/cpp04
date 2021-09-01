@@ -4,7 +4,7 @@ MateriaSource::MateriaSource( void )
 {
     //std::cout << "Default constructor of MateriaSource called \n";
     for( int i = 0; i < 4; i++ )
-        src[i] = NULL;
+        this->src[i] = NULL;
 }
 
 MateriaSource::MateriaSource( MateriaSource const &src )
@@ -19,15 +19,15 @@ MateriaSource & MateriaSource::operator=( MateriaSource const &rhs)
     //std::cout << "Assignation operator of MateriaSource called" << std::endl;
     if (this != &rhs )
     {
-       for( int i = 0; i < 4; i++ )
-        {
-            if ( this->src[i] )
-                delete this->src[i];
-            //src[i] = NULL;
-        }
+    //    for( int i = 0; i < 4; i++ )
+    //     {
+    //         if ( this->src[i] )
+    //             delete this->src[i];
+    //         //src[i] = NULL;
+    //     }
         for (int i = 0; i < 4; i++ )
         {
-            if( rhs.src[i] )
+            //if( rhs.src[i] )
                 this->src[i] = rhs.src[i];
         }
     }
@@ -38,24 +38,27 @@ MateriaSource & MateriaSource::operator=( MateriaSource const &rhs)
 MateriaSource::~MateriaSource()
 {
     //std::cout << "Destructor of MateriaSource called \n";
-    for( int i = 0; i < 4; i++ )
-    {
-        delete src[i];
-    }
+    // for( int i = 0; i < 4; i++ )
+    // {
+    //     delete this->src[i];
+    // }
 }
 
 void MateriaSource::learnMateria(AMateria* m)
 {
-    if ( m == NULL )
-        return;
-    for ( int i = 0; i < 4 ; i++ )
+    if ( m != NULL )
     {
-        if ( this->src[i] == NULL )
+            //return;
+        for ( int i = 0; i < 4 ; i++ )
         {
-            this->src[i] = m;
-            break;
+            if ( this->src[i] == NULL )
+            {
+                this->src[i] = m;
+                break;
+            }
         }
     }
+    
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)

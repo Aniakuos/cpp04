@@ -19,8 +19,8 @@ AMateria::AMateria(std::string const & type) : Type(type)
 AMateria & AMateria::operator=(AMateria const & rhs)
 {
     //std::cout << "Assignation operator of AMateria called" << std::endl;
-    //this->Type = rhs.getType();
-    (void) rhs;
+    this->Type = rhs.getType();
+    //(void) rhs;
     return (*this);
 }
 

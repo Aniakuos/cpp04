@@ -28,16 +28,18 @@ Character & Character::operator=(Character const & rhs)
     if (this != &rhs )
     {
         this->name = rhs.getName();
-        for( int i = 0; i < 4; i++ )
-        {
-            if ( this->inv[i] )
-                delete this->inv[i];
-            //this->inv[i] = NULL;
-        }
+        // for( int i = 0; i < 4; i++ )
+        // {
+        //     if ( this->inv[i] )
+        //         delete this->inv[i];
+        //     //this->inv[i] = NULL;
+        // }
         for (int i = 0; i < 4; i++ )
         {
             if( rhs.inv[i] )
-                this->inv[i] = rhs.inv[i];
+                this->inv[i] = rhs.inv[i];//->clone();
+            else
+                this->inv[i] = NULL;
         }
     }
     return (*this);
@@ -46,10 +48,10 @@ Character & Character::operator=(Character const & rhs)
 Character::~Character( void )
 {
     //std::cout << "Destructor of Character called \n";
-    for( int i = 0; i < 4; i++ )
-    {
-        delete this->inv[i];
-    }
+    // for( int i = 0; i < 4; i++ )
+    // {
+    //     delete this->inv[i];
+    // }
 }
 
 std::string const & Character::getName() const
@@ -77,13 +79,13 @@ void Character::unequip(int idx)
     {
         if( this->inv[idx] != NULL)
             this->inv[idx] = NULL;
-        for ( int i = idx; i < 3; i++ )
-        {
-            if( this->inv[i + 1] == NULL)
-                break;
-            this->inv[i] = this->inv[i + 1];
-            this->inv[i + 1] = NULL;
-        }
+        // for ( int i = idx; i < 3; i++ )
+        // {
+        //     if( this->inv[i + 1] == NULL)
+        //         break;
+        //     this->inv[i] = this->inv[i + 1];
+        //     this->inv[i + 1] = NULL;
+        // }
     }
 }
 

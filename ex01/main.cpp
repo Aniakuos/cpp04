@@ -22,7 +22,7 @@ int main()
     }
     
     Cat cat;
-    cat.setIdea(0, "test idea");
+    cat.setIdea(0, "Cat idea");
     std::cout << cat.getIdea(0) << "\n";
     Cat cat2(cat);
     std::cout << cat2.getIdea(0) << "\n";
