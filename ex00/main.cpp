@@ -15,11 +15,11 @@ int main()
     std::cout << k->getType() << " " << std::endl;
     k->makeSound();
     meta->makeSound();
-    while (1);
 
 
     delete meta;
     delete j;
     delete i;
+    delete k;
 
 }

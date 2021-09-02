@@ -6,16 +6,16 @@
 
 class Animal
 {
-    private:
-        /* data */
     public:
         Animal( void );
         Animal(Animal const &);
         Animal& operator=(Animal const &);
-        virtual void makeSound() const;
+        virtual ~Animal();
         std::string getType( void ) const;
         void set_Type( std::string const t);
-        virtual ~Animal();
+        virtual void makeSound() const;
+        
+        
     protected:
         std::string type;
 
@@ -27,8 +27,8 @@ class Cat : public Animal
         Cat( void );
         Cat(Cat const &);
         Cat& operator=(Cat const &);
-        virtual void makeSound() const;
         virtual ~Cat();
+        virtual void makeSound() const;
 
 };
 
@@ -38,8 +38,8 @@ class Dog : public Animal
         Dog( void );
         Dog(Dog const &);
         Dog& operator=(Dog const &);
-        virtual void makeSound() const;
         virtual ~Dog();
+        virtual void makeSound() const;
 
 };
 

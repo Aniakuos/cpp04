@@ -7,8 +7,7 @@
 
 class Animal
 {
-    private:
-        /* data */
+
     public:
         Animal();
         Animal(Animal const &);
