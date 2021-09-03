@@ -9,23 +9,23 @@ int main()
     // Cat cat2 = cat;
     // std::cout << cat2.getIdea(0) << "\n";
 
-    // Dog basic;
-    // basic.setIdea(1, "Dog idea");
-    // std::cout << basic.getIdea(1) << "\n";
-    // Dog tmp = basic;
-    // std::cout << tmp.getIdea(1) << "\n";
+    Dog basic;
+    basic.setIdea(1, "Dog idea");
+    std::cout << basic.getIdea(1) << "\n";
+    Dog tmp = basic;
+    std::cout << tmp.getIdea(1) << "\n";
 
     //const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
+    // const Animal* j = new Dog();
+    // const Animal* i = new Cat();
+    // std::cout << j->getType() << " " << std::endl;
+    // std::cout << i->getType() << " " << std::endl;
     
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
+    // i->makeSound(); //will output the cat sound!
+    // j->makeSound();
     //meta->makeSound();
 
     //delete meta;
-    delete j;
-    delete i;
+    // delete j;
+    // delete i;
 }

@@ -6,6 +6,7 @@
 
 int main()
 {
+    //AMateria *test = new AMateria();
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
